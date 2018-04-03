@@ -1,6 +1,5 @@
 import React from 'react'
 import { render } from 'react-dom'
-import Hello from './Hello'
 
 const styles = {
   fontFamily: 'sans-serif',
@@ -9,7 +8,7 @@ const styles = {
   flexDirection: 'column',
   width: '100vw',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
 }
 
 const buttonDiv = color => {
@@ -20,7 +19,7 @@ const buttonDiv = color => {
     height: '100px',
     margin: '10px',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   }
 }
 
@@ -28,7 +27,7 @@ class App extends React.Component {
   state = {
     colors: ['purple', 'blue', 'green'],
     firstColor: 'red',
-    objs: [{ color: 'purple' }, { color: 'blue' }, { color: 'green' }]
+    objs: [{ color: 'purple' }, { color: 'blue' }, { color: 'green' }],
   }
 
   handleClick = (id, color) => {
@@ -44,8 +43,6 @@ class App extends React.Component {
   render() {
     return (
       <div style={styles}>
-        <Hello name="CodeSandbox" />
-
         {this.state.colors.map((color, id) => (
           <div key={id} style={buttonDiv(color)}>
             <button onClick={() => this.handleClick(id, 'red')}>{color}</button>
