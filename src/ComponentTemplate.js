@@ -11,11 +11,18 @@ export default class Component extends React.Component {
     KEY: 'value',
     BOOL: true,
     LIST: [],
+    ...this.props,
   }
 
   eventFn = event => {
     // Using setState({}) will only change the specified key and keep everything else.
     this.setState({ KEY: 'new_value' })
+  }
+
+  callbackAfterSetState = newValue => {
+    this.setState({ KEY: newValue }, () => {
+      console.log(this.state.KEY)
+    })
   }
 
   logFn = element => console.log(element)
